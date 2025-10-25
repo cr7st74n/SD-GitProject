@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven' 
+        maven 'maven'
         jdk 'DockerJDK'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/cr7st74n/SD-GitProject.git'
+                checkout scm
             }
         }
 
