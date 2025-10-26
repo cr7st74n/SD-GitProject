@@ -48,4 +48,11 @@ pipeline {
             echo 'Build failed!'
         }
     }
+    stage('Build') {
+    steps {
+        sh './mvnw clean package -DskipTests'
+        archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+    }
+}
+
 }
