@@ -34,11 +34,12 @@ pipeline {
             echo 'Build Failed ❌'
         }
     }
-}
-stage('Build') {
+    stage('Build') {
     steps {
         sh './mvnw clean package -DskipTests'
         archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
     }
+}
+
 }
 
